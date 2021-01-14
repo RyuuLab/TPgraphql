@@ -1,0 +1,46 @@
+
+type Movie {
+	id_movie : ID!
+	titreFrancais : String!
+	titreOriginal : String!
+	dateSortie : Int
+	realisateur : Realisateur!
+	etat : String!
+	
+}
+
+type Realisateur {
+	id_realisateur : ID!
+	nom : String!
+	prenom : String!
+	dateNaissance : String!
+	dateMort : String
+}
+
+type Acteur {
+	id_acteur : ID!
+	nom : String!
+	prenom : String!
+	dateNaissance : String!
+	dateMort : String
+	
+}
+
+type Role {
+	acteur : Acteur!
+ 	movie : Movie!
+ 	role : String!
+}
+
+type Query {
+	Movies:[Movie]
+	Realisateur(id_realisateur:ID!): Realisateur
+	Acteur(id_acteur:ID!) : Acteur
+	ActorsByMovie(id_movie:ID!):[Acteur]
+	
+}
+
+
+
+	
+	
